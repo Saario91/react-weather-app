@@ -14,10 +14,9 @@ export default function Search() {
   }
   function handleQuery(event) {
     event.preventDefault();
-    if (city) {
+    console.log(`The city is ${city}`)
       let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${APIkey}&units=metric`;
       axios.get(url).then(getWeather);
-    }
   }
   function updateQuery(event) {
     setCity(event.target.value);
@@ -25,11 +24,11 @@ export default function Search() {
   return (
     <div className="Search">
       <form onSubmit={handleQuery}>
-        <input type="search" onClick={updateQuery} />
+        <input type="search" onChange={updateQuery} />
         <input type="submit" />
       </form>
-      <p>{text}</p>
-      <Forecast city={city} days={3} />
+      <div className='CurrentWeather'>{text}</div>
+      <div className='ForecastTiles'><Forecast city={city} days={3} /></div>
     </div>
   );
 }
