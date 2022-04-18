@@ -1,6 +1,14 @@
-.App {
-  text-align: center;
+ul,.App{
+  list-style-type:none;
+  padding-left: 0;
 }
+.App {
+  text-align: left;
+  border: #313131;
+  margin: 50px auto;
+  max-width: 600px;
+}
+
 
 .App-logo {
   height: 40vmin;
