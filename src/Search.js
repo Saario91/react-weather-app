@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import MakeList from "./MakeList";
+import Forecast from "./Forecast";
 
 export default function Search() {
   let [city, setCity] = useState("");
@@ -28,7 +29,7 @@ export default function Search() {
         <input type="submit" />
       </form>
       <p>{text}</p>
-
+      <Forecast city={city} days={3} />
     </div>
   );
 }
